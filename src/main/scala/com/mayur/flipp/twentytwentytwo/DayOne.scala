@@ -1,9 +1,5 @@
 package com.mayur.flipp.twentytwentytwo
 
-import DayOne.input
-
-import scala.util.Try
-
 object DayOne {
 
   def getElfWithMaxStock(input:String): (Long,Int) = {
