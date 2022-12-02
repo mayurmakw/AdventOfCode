@@ -26,6 +26,6 @@ with BeforeAndAfterAll {
     val actualResult = getElfWithMaxStock(input)
     assert(actualResult._1 === 24000)
     assert(actualResult._2 === 4)
-
 }
+
 }
