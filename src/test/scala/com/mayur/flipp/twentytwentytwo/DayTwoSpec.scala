@@ -1,7 +1,7 @@
 package com.mayur.flipp.twentytwentytwo
 
-import org.scalatest.flatspec.AnyFlatSpec
 import com.mayur.flipp.twentytwentytwo.DayTwo._
+import org.scalatest.flatspec.AnyFlatSpec
 
 class DayTwoSpec extends AnyFlatSpec {
 
