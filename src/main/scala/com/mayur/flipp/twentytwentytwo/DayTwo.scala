@@ -1,4 +1,5 @@
 package com.mayur.flipp.twentytwentytwo
+import scala.io.Source
 
 object DayTwo {
 
@@ -23,4 +24,12 @@ object DayTwo {
       .map(x => giveOutcome(x(0), x(1)) + score(x(1)))
       .sum
   }
+
+  def main(args: Array[String]): Unit = {
+    val resource = Source.fromResource("./day2input.txt")
+    val input = resource.getLines
+    println(calculateRockPaperScissorScore(input.mkString("\n")))
+  }
+
+
 }
