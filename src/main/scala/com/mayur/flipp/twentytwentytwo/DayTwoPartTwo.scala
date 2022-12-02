@@ -11,17 +11,19 @@ object DayTwoPartTwo {
   val LOSE = 0
   val DRAW = 3
   val score = Map("A"-> ROCK, "B"-> PAPER, "C" -> SCISSOR, "X"-> LOSE, "Y"-> DRAW, "Z"-> WIN)
+  val selection = Map(ROCK-> "A",PAPER ->"B", SCISSOR ->"C")
 
   def makeSelection(a:String, b:String):String = {
-    (score(a),score(b)) match {
-      case(ROCK,LOSE)=> "C"
-      case(ROCK,WIN) => "B"
-      case (PAPER,LOSE)=> "A"
-      case (PAPER,WIN)=> "C"
-      case (SCISSOR,LOSE) => "B"
-      case (SCISSOR,WIN)=>"A"
-      case (_, DRAW) => a
+    val id = (score(a),score(b)) match {
+      case(ROCK,LOSE)=> SCISSOR
+      case(ROCK,WIN) => PAPER
+      case (PAPER,LOSE)=> ROCK
+      case (PAPER,WIN)=> SCISSOR
+      case (SCISSOR,LOSE) => PAPER
+      case (SCISSOR,WIN)=> ROCK
+      case (_, DRAW) => score(a)
     }
+    selection(id)
   }
 
   def giveOutcome(a:String, b: String):Long = {
