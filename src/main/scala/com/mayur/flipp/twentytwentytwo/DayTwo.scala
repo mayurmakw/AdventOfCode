@@ -5,18 +5,15 @@ object DayTwo {
   val ROCK = 1
   val PAPER = 2
   val SCISSOR = 3
-  val score = Map("X" ->ROCK,"Y"-> PAPER,"Z"->SCISSOR)
+  val score = Map("X" ->ROCK,"Y"-> PAPER,"Z"->SCISSOR, "A"-> ROCK, "B"-> PAPER, "C" -> SCISSOR)
 
 
   def giveOutcome(a:String, b: String):Long = {
-    (a,b) match {
-      case ("A","X") => 3
-      case ("A", "Y") => 6
-      case ("B", "Z") => 6
-      case ("B", "Y") => 3
-      case ("C","A") => 6
-      case ("C", "Z") => 3
-      case _ => 0
+      (score(a),score(b)) match {
+        case (ROCK,PAPER) => 6
+        case (PAPER,SCISSOR) => 6
+        case (SCISSOR,ROCK) => 6
+        case(x,y) => if(x == y) 3 else 0
     }
   }
 
