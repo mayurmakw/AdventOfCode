@@ -4,7 +4,7 @@ import scala.io.Source
 
 class DayFourPartTwo {
 
-  def getAnyOverlappingSection(input: String):Long = {
+  def getAnyOverlappingSection(input: String): Long = {
     input.split("\n")
       .map(x => x.split(","))
       .map(x => (x(0).split("-").map(_.toInt), x(1).split("-").map(_.toInt)))
@@ -12,7 +12,8 @@ class DayFourPartTwo {
   }
 
 }
-object  DayFourPartTwo extends App {
+
+object DayFourPartTwo extends App {
   val resource = Source.fromResource("./day4.txt")
   val input = resource.getLines.mkString("\n")
   val result = new DayFourPartTwo().getAnyOverlappingSection(input)

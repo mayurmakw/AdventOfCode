@@ -14,9 +14,9 @@ class DayThreePartTwo {
       .sum
   }
 
-  def getBadgeDynamicSize(input: Array[Array[Char]]):Long = {
+  def getBadgeDynamicSize(input: Array[Array[Char]]): Long = {
     input.reduce(_ intersect _)
-      .map(x =>if (x.isUpper) x.toInt - 65 + 27 else x.toInt - 97 + 1)
+      .map(x => if (x.isUpper) x.toInt - 65 + 27 else x.toInt - 97 + 1)
       .take(1)
       .sum
   }
